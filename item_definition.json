@@ -1,0 +1,23 @@
+{
+  "id": "leaf_mask",
+  "name": "Leaf Mask",
+  "description": "A mask made of woven leaves, providing natural camouflage in forested areas.",
+  "type": "head",
+  "defense": 2,
+  "weight": 1.2,
+  "textures": {
+    "player": "items/leaf_mask/leaf_mask_player.png",
+    "enemy": "items/leaf_mask/leaf_mask_enemy.png"
+  },
+  "rarity": "uncommon",
+  "effects": [
+    {
+      "type": "stealth",
+      "value": 1.5
+    },
+    {
+      "type": "nature_resistance",
+      "value": 10
+    }
+  ]
+}

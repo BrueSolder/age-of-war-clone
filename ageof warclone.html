@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age of War Clone</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+</head>
+<body>
+
+<div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui-overlay">
+        <div class="top-bar">
+            <div class="player-section">
+                <div class="player-stats">
+                    <span>Gold: <span id="player-gold">180</span></span>
+                    <span>Exp: <span id="player-exp">0</span></span>
+                    <span>Age: <span id="player-age">Pre-Stone Age</span></span>
+                </div>
+                <div class="game-controls">
+                    <button id="pause-btn" class="unit-btn">Pause</button>
+                    <button id="speed-1x-btn" class="unit-btn">x1</button>
+                    <button id="speed-2x-btn" class="unit-btn">x2</button>
+                    <button id="speed-3x-btn" class="unit-btn">x3</button>
+                    <button id="music-btn" class="unit-btn">Play Music</button>
+                    <button id="troop-info-btn" class="unit-btn">Troop Info</button>
+                </div>
+            </div>
+            <div class="ai-stats">
+                <span>Age: <span id="ai-age">Pre-Stone Age</span></span>
+                <span>Gold: <span id="ai-gold">180</span></span>
+                <span>Exp: <span id="ai-exp">0</span></span>
+            </div>
+        </div>
+        <div id="pan-buttons-row" class="bottom-bar">
+            <button id="pan-left-btn" class="pan-btn">⟵</button>
+            <button id="pan-right-btn" class="pan-btn">⟶</button>
+        </div>
+        <div class="bottom-bar">
+            <div id="main-controls" class="unit-selection">
+                <button id="main-unit-menu-btn" class="unit-btn">Units</button>
+                <button id="main-defense-menu-btn" class="unit-btn">Defenses</button>
+                <button id="main-structures-menu-btn" class="unit-btn">Structures</button>
+                <button id="age-up-btn" class="unit-btn">Age Up</button>
+                 <button id="delete-defense-btn" class="unit-btn">Sell Defense</button>
+                <button id="rockslide-btn" class="unit-btn">
+                    <span class="btn-text">Rockslide</span>
+                    <div class="cooldown-overlay"></div>
+                </button>
+            </div>
+            <div id="detailed-unit-controls" class="unit-selection" style="display: none;">
+                <button id="back-to-main-menu-btn" class="unit-btn">⟵</button>
+                <div id="detailed-unit-buttons-container"></div>
+            </div>
+            <div id="detailed-defense-controls" class="unit-selection" style="display: none;">
+                <button id="back-to-main-menu-from-defense-btn" class="unit-btn">⟵</button>
+                <div id="detailed-defense-buttons-container"></div>
+            </div>
+            <div id="detailed-structures-controls" class="unit-selection" style="display: none;">
+                <button id="back-to-main-menu-from-structures-btn" class="unit-btn">⟵</button>
+                <div id="detailed-structures-buttons-container"></div>
+                <button id="cancel-placement-btn" class="unit-btn" style="display: none; background-color: #c0392b;">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div id="message-box">
+        <span id="end-message"></span>
+        <button id="retry-btn">Retry</button>
+    </div>
+    <div id="almanac">
+        <div id="almanac-sidebar">
+            <div id="almanac-team-toggle">
+                <button id="almanac-player-btn" class="almanac-team-btn">Player Troops</button>
+                <button id="almanac-enemy-btn" class="almanac-team-btn">Enemy Troops</button>
+            </div>
+            <div id="almanac-unit-list"></div>
+        </div>
+        <div id="almanac-main">
+            <canvas id="almanac-preview"></canvas>
+            <div id="almanac-info"></div>
+            <div id="almanac-arrow">⟶</div>
+        </div>
+        <button id="almanac-close-btn">X</button>
+    </div>
+    <div id="special-unit-choice-overlay">
+        <div id="special-unit-cards">
+            <div class="choice-card" id="choice-card-1">
+                <canvas id="choice-canvas-1"></canvas>
+                <div id="choice-info-1"></div>
+            </div>
+            <div class="choice-card" id="choice-card-2">
+                <canvas id="choice-canvas-2"></canvas>
+                <div id="choice-info-2"></div>
+            </div>
+        </div>
+        <button id="confirm-special-unit" class="unit-btn">Confirm</button>
+    </div>
+    <div id="crafting-overlay">
+        <button id="crafting-back-btn" class="unit-btn" style="position: absolute; top: 20px; left: 20px;">Back</button>
+        <div id="crafting-cards"></div>
+    </div>
+</div>
+
+<!-- Load game -->
+<script src="js/game-core.js"></script>
+
+</body>
+</html>
